@@ -7,20 +7,20 @@ class Deck
   attr_accessor :cards
 
   def initialize
-    @cards = build_deck
+    @cards = []
+    build_deck
   end
 
   def build_deck
-    cards = []
     SUITS.each do |suit|
       RANKS.each do |rank|
-        cards << Card.new(rank.to_s, suit)
+        @cards << Card.new(rank.to_s, suit)
       end
     end
-    cards.shuffle!
+    @cards.shuffle!
   end
 
   def deal(num)
-    cards.pop(num)
+    @cards.pop(num)
   end
 end
