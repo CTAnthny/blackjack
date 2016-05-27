@@ -21,6 +21,7 @@ class Deck
   end
 
   def deal(num)
-    @cards.pop(num)
+    returned_card = @cards.pop(num)
+    returned_card[0]
   end
 end
